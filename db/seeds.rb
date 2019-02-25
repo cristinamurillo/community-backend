@@ -14,7 +14,7 @@ Organization.destroy_all
     Organization.create(
         name: Faker::Hipster.word,
         description: Faker::Hipster.paragraph,
-        icon_url: Faker::LoremFlickr.image("50x60")
+        icon_url: 'https://pbs.twimg.com/profile_images/971478895005503488/I7ekAuBd_400x400.jpg'
     )
 end
 

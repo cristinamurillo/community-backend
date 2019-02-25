@@ -17,9 +17,19 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module CommunityBackend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, 
+          :post, :delete, :put, :patch, :options, :head]
+        end
+      end
+
     config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
