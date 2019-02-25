@@ -1,5 +1,4 @@
 class OrganizationsController < ApplicationController
-    class organizationsController < ApplicationController
 
         def index
             render json: Organization.all 
@@ -33,6 +32,5 @@ class OrganizationsController < ApplicationController
             params.permit(:name, :description, :icon_url)
         end
     
-    end
     
 end
