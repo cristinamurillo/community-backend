@@ -9,13 +9,13 @@ require 'faker'
 
 Opportunity.destroy_all
 Organization.destroy_all
-
+User.destroy_all
 
 20.times do
     Organization.create(
         name: Faker::Hipster.word,
         description: Faker::Hipster.paragraph,
-        icon_url: 'https://pbs.twimg.com/profile_images/971478895005503488/I7ekAuBd_400x400.jpg'
+        icon_url: 'https://user-content.givegab.com/uploads/group/logo/445614/bb6b03849dd3d9c24bdd493bd2d959d72c384c9b.png'
         )
     end
     
@@ -55,5 +55,8 @@ latitude = 40.730610
     latitude-=rand()*0.02
     longitude= -73.95242 
 end
+
+User.create(email: "cristina@cristina.com", password_digest: "cristina", first_name: "Cristina", organization_id: 1)
+User.create(email: "gabe@gabe.com", password_digest: "gabe", first_name: "Gabe")
 
 puts "seeded"
