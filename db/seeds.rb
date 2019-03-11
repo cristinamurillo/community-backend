@@ -13,7 +13,7 @@ User.destroy_all
 
 20.times do
     Organization.create(
-        name: Faker::Hipster.word,
+        name: (Faker::Hipster.word).capitalize,
         description: Faker::Hipster.paragraph,
         icon_url: 'https://user-content.givegab.com/uploads/group/logo/445614/bb6b03849dd3d9c24bdd493bd2d959d72c384c9b.png'
         )
