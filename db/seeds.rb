@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'date'
 
 Opportunity.destroy_all
 Organization.destroy_all
@@ -31,7 +32,8 @@ longitude= -73.95242
         img_url: Faker::LoremFlickr.image,
         location: "#{latitude}, #{longitude}",
         paid: Faker::Boolean.boolean,
-        organization_id: Faker::Number.between(1, 20) 
+        organization_id: Faker::Number.between(1, 20),
+        date: DateTime.now
     )
     latitude+=rand()*0.02
     longitude= -73.95242 
@@ -50,7 +52,8 @@ latitude = 40.730610
         img_url: Faker::LoremFlickr.image,
         location: "#{latitude}, #{longitude}",
         paid: Faker::Boolean.boolean,
-        organization_id: Faker::Number.between(1, 20) 
+        organization_id: Faker::Number.between(1, 20),
+        date: DateTime.now
     )
     latitude-=rand()*0.02
     longitude= -73.95242 
