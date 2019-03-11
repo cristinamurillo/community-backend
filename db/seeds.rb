@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'date'
 
 Opportunity.destroy_all
 Organization.destroy_all
@@ -13,7 +14,7 @@ User.destroy_all
 
 20.times do
     Organization.create(
-        name: Faker::Hipster.word,
+        name: (Faker::Hipster.word).capitalize,
         description: Faker::Hipster.paragraph,
         icon_url: 'https://user-content.givegab.com/uploads/group/logo/445614/bb6b03849dd3d9c24bdd493bd2d959d72c384c9b.png'
         )
@@ -31,7 +32,8 @@ longitude= -73.95242
         img_url: Faker::LoremFlickr.image,
         location: "#{latitude}, #{longitude}",
         paid: Faker::Boolean.boolean,
-        organization_id: Faker::Number.between(1, 20) 
+        organization_id: Faker::Number.between(1, 20),
+        date: DateTime.now
     )
     latitude+=rand()*0.02
     longitude= -73.95242 
@@ -50,7 +52,8 @@ latitude = 40.730610
         img_url: Faker::LoremFlickr.image,
         location: "#{latitude}, #{longitude}",
         paid: Faker::Boolean.boolean,
-        organization_id: Faker::Number.between(1, 20) 
+        organization_id: Faker::Number.between(1, 20),
+        date: DateTime.now
     )
     latitude-=rand()*0.02
     longitude= -73.95242 
